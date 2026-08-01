@@ -82,7 +82,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Article 4',
     group: 'Governance',
     title: 'Governance Bodies and Decision Rights',
-    text: 'The design splits two currencies: money votes in the Owners\' Council, people vote in the Assembly, and amendment needs both, so a large holder blocks change but cannot impose it. […] Even at half the voting capital they elect ten of twenty seats. They cannot govern BMW alone, and a constitution promising the fifth generation control would be lying to it.',
+    text: 'The design splits two currencies: money votes in the Owners\' Council, people vote in the Assembly, and amendment needs both, so a large holder blocks change but cannot impose it. […] That arithmetic is the most under-appreciated constraint on this family: even at half the voting capital they elect ten of twenty seats. They cannot govern BMW alone, and a constitution promising the fifth generation control would be lying to it.',
     params: [
       { key: 'supervisoryTotal', label: 'Supervisory Board seats', value: 20 },
       { key: 'shareholderBench', label: 'Shareholder-elected seats', value: 10 },
@@ -192,7 +192,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Appendix E1',
     group: 'Eligibility',
     title: 'Eligibility and Share Transfer',
-    text: 'Voting equity in BMW AG may be held only by (a) descendants of Herbert Quandt by blood or adoption, and (b) trusts or holding companies wholly beneficially owned by such descendants. Spouses and registered partners are not eligible to hold voting equity at any time, including by testamentary disposition. Any transfer to a non-eligible person is void as against the pool and triggers the buy-out in E2. Continued membership is conditional on a prenuptial agreement providing for separation of property, and on a will consistent with the pooling agreement.',
+    text: '1. Voting equity in BMW AG may be held only by (a) descendants of Herbert Quandt by blood or adoption, and (b) trusts or holding companies wholly beneficially owned by such descendants. 2. Spouses and registered partners are not eligible to hold voting equity at any time, including by testamentary disposition. 3. Any transfer to a non-eligible person is void as against the pool and triggers the buy-out in E2. 4. Continued membership is conditional on a prenuptial agreement providing for separation of property, and on a will consistent with the pooling agreement.',
     params: [
       { key: 'eligibleClass', label: 'Eligible holders', value: 'Herbert Quandt descendants + wholly-owned vehicles' },
       { key: 'spouses', label: 'Spouses', value: 'Ineligible, including by will' },
@@ -206,7 +206,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Appendix E2',
     group: 'Valuation',
     title: 'Valuation and Buy-Sell',
-    text: 'A member may exit at any time on ninety days\' notice. The pool has a right of first refusal, exercisable within sixty days, at the volume-weighted average price of the BMW ordinary share over the preceding ninety trading days, less a 20 per cent discount reflecting illiquidity and the transfer restrictions. The purchase is funded from the Continuity Reserve, where the Reserve is insufficient, the pool may pay in three annual instalments with interest at the ECB main refinancing rate plus 200 basis points. Unlisted family assets are valued triennially by an independent firm appointed by the Owners\' Council, on the IDW S1 standard.',
+    text: 'A member may exit at any time on ninety days\' notice. 2. The pool has a right of first refusal, exercisable within sixty days, at the volume-weighted average price of the BMW ordinary share over the preceding ninety trading days, less a 20 per cent discount reflecting illiquidity and the transfer restrictions. 3. The purchase is funded from the Continuity Reserve, where the Reserve is insufficient, the pool may pay in three annual instalments with interest at the ECB main refinancing rate plus 200 basis points. 4. Unlisted family assets are valued triennially by an independent firm appointed by the Owners\' Council, on the IDW S1 standard.',
     params: [
       { key: 'noticeDays', label: 'Exit notice', value: 90, unit: 'days' },
       { key: 'rofrDays', label: 'Right of first refusal', value: 60, unit: 'days' },
@@ -223,7 +223,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Appendix E3',
     group: 'Employment',
     title: 'Family Employment',
-    text: 'No descendant may serve on the Board of Management of BMW AG. Eligibility for employment in a family holding company requires a completed degree, a minimum of five years of employment outside the family\'s companies, and documented profit-and-loss responsibility. Applications are assessed by the relevant company\'s own process, not by the Family Council. Remuneration is benchmarked externally by the Family Council against comparable non-family roles. Neither a family discount nor a family premium is permitted.',
+    text: 'No descendant may serve on the Board of Management of BMW AG. 2. Eligibility for employment in a family holding company requires a completed degree, a minimum of five years of employment outside the family\'s companies, and documented profit-and-loss responsibility. 3. Applications are assessed by the relevant company\'s own process, not by the Family Council. 4. Remuneration is benchmarked externally by the Family Council against comparable non-family roles. Neither a family discount nor a family premium is permitted.',
     params: [
       { key: 'degree', label: 'Degree', value: 'Required' },
       { key: 'outsideYears', label: 'Outside experience', value: 5, unit: 'years' },
@@ -237,7 +237,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Appendix E4',
     group: 'Conduct',
     title: 'Code of Conduct',
-    text: 'No member may trade, pledge or hedge BMW shares outside a window approved by the Owners\' Council. No member may speak publicly for the family without a mandate from the Family Council. Every member files an annual declaration of directorships, material investments and conflicts. No member may disclose the address, movements or non-pooled holdings of another member.',
+    text: 'No member may trade, pledge or hedge BMW shares outside a window approved by the Owners\' Council. 2. No member may speak publicly for the family without a mandate from the Family Council. 3. Every member files an annual declaration of directorships, material investments and conflicts. 4. No member may disclose the address, movements or non-pooled holdings of another member.',
     params: [
       { key: 'tradingWindow', label: 'Trading', value: 'Approved windows only' },
       { key: 'publicVoice', label: 'Public statements', value: 'Council mandate required' },
@@ -251,7 +251,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Appendix E5',
     group: 'Distribution',
     title: 'Distribution Policy',
-    text: 'The Owners\' Council sets a base distribution per pooled share, reset every three years by reference to German CPI. Dividend receipts above the base are transferred to the Continuity Reserve, held at holding-company level. The Reserve is applied, in order of priority, to: funding the base in years when BMW\'s dividend falls below it, purchasing ordinary shares when the pooled percentage approaches the 27 per cent floor, and funding buy-outs under E2. A distribution below the base requires 75 per cent of pooled shares. The Reserve may not be distributed to members.',
+    text: '1. The Owners\' Council sets a base distribution per pooled share, reset every three years by reference to German CPI. 2. Dividend receipts above the base are transferred to the Continuity Reserve, held at holding-company level. 3. The Reserve is applied, in order of priority, to: funding the base in years when BMW\'s dividend falls below it, purchasing ordinary shares when the pooled percentage approaches the 27 per cent floor, and funding buy-outs under E2. 4. A distribution below the base requires 75 per cent of pooled shares. 5. The Reserve may not be distributed to members.',
     params: [
       { key: 'baseReset', label: 'Base reset', value: 3, unit: 'years, German CPI' },
       { key: 'waterfall1', label: 'Reserve priority 1', value: 'Fund base in weak years' },
