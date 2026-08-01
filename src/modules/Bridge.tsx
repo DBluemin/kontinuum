@@ -359,8 +359,8 @@ export function Bridge() {
             <Finding label="Two currencies, one holder">
               At {fmtPct(c.stefanShares / c.pooledShares)} of the pool, Stefan Quandt carries every
               simple-majority decision alone while Susanne Klatten holds a veto over everything
-              requiring 75%. That is not a deadlock and it is not control — see the Decision
-              Simulator.
+              requiring 75%. Each of them can stop the other on the questions that matter, and
+              neither can govern. The Decision Simulator resolves any specific case.
             </Finding>
           </div>
         </Panel>

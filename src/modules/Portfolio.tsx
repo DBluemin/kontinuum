@@ -377,16 +377,16 @@ export function PortfolioModule() {
 
             <div className="mt-5">
               {poc && (
-                <Finding tone="var(--color-m-blue)" label="The expensive problem is not governance">
-                  At today's {fmtPct(currentVol, 1)} volatility a fully compliant portfolio — one
-                  that never sells a share below the floor — returns{' '}
+                <Finding tone="var(--color-m-blue)" label="Where the money actually goes">
+                  At today's {fmtPct(currentVol, 1)} volatility a fully compliant portfolio, one
+                  that never sells a share below the floor, returns{' '}
                   {fmtPct(poc.compliantErAtCurrentVol, 2)} against the {fmtPct(currentEr, 2)} the
                   family actually holds. That is {poc.inefficiencyBp.toFixed(0)} basis points
                   available at no constitutional cost whatever, because the family holds{' '}
                   {fmtPct(cons.bmwConcentration - poc.floorWeight, 1)} more BMW than Article 3
-                  requires. The floor costs {poc.costBp.toFixed(0)} bp at this risk level; the
-                  excess above the floor costs {poc.inefficiencyBp.toFixed(0)}. Continuity is cheap.
-                  Inertia is not.
+                  requires. The floor itself costs {poc.costBp.toFixed(0)} bp at this risk level.
+                  The excess above it costs {poc.inefficiencyBp.toFixed(0)}. Most of what looks like
+                  the price of continuity is the price of having left the position alone.
                 </Finding>
               )}
             </div>

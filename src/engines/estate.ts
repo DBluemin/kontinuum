@@ -277,7 +277,7 @@ export function liquidityAtEvent(
   if (shortfall === 0) {
     verdict = 'The bill is met from liquid assets and the Continuity Reserve. No shares move.'
   } else if (breachesBlocking) {
-    verdict = `Meeting the bill requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares, which takes Stefan Quandt below the blocking quarter. The tax event, not the market, is what ends the family's veto.`
+    verdict = `Meeting the bill requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares, which takes Stefan Quandt below the blocking quarter. A death in the family ends the veto that decades of market volatility never touched.`
   } else if (breachesFloor) {
     verdict = `Meeting the bill requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares and breaches the Art.3 pool floor. Abandoning the floor needs 75% by share.`
   } else {
