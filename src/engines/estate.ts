@@ -16,6 +16,7 @@
  */
 
 import { UK_TAX, DE_TAX, MARKET } from '../data/assumptions'
+import { dec } from '../lib/format'
 
 /** UK statutory thresholds are in GBP; every value here is in EUR. */
 const gbp = (v: number) => v * MARKET.gbpEur.value
@@ -99,7 +100,7 @@ export function computeUK(input: TransferInput): TaxResult {
     notes.push(
       taper === 0
         ? 'Seven years survived: the gift falls out of the estate entirely.'
-        : `Potentially exempt transfer, ${input.yearsSurvived} year(s) survived — taper leaves ${(taper * 100).toFixed(0)}% of the 40% charge in point.`,
+        : `Potentially exempt transfer, ${input.yearsSurvived} year(s) survived — taper leaves ${dec(taper * 100, 0)}% of the 40% charge in point.`,
     )
   }
 
@@ -172,7 +173,7 @@ export function computeDE(input: TransferInput): TaxResult {
     const applied = abatedExemption(perAcquirer, baseRate)
     const exemption = value * applied
     reliefs.push({
-      label: `§13a Verschonungsabschlag (${(applied * 100).toFixed(0)}% after abatement)`,
+      label: `§13a Verschonungsabschlag (${dec(applied * 100, 0)}% after abatement)`,
       amount: exemption,
       clause: 'Art.7',
     })
@@ -180,11 +181,11 @@ export function computeDE(input: TransferInput): TaxResult {
 
     if (applied === 0) {
       notes.push(
-        `Business relief abates to zero above roughly 90m € per acquirer. At ${(perAcquirer / 1e6).toFixed(0)}m € each, the Verschonungsabschlag that Art.7 plans around is worth nothing. Only the Verschonungsbedarfsprüfung — a needs test applying 50% of the acquirer's other private assets to the bill — remains, and it is discretionary relief, not an entitlement.`,
+        `Business relief abates to zero above roughly 90m € per acquirer. At ${dec(perAcquirer / 1e6, 0)}m € each, the Verschonungsabschlag that Art.7 plans around is worth nothing. Only the Verschonungsbedarfsprüfung — a needs test applying 50% of the acquirer's other private assets to the bill — remains, and it is discretionary relief, not an entitlement.`,
       )
     } else if (applied < baseRate) {
       notes.push(
-        `Relief abates by one point per 750,000 € above 26m €, leaving ${(applied * 100).toFixed(0)}% of the standard ${(baseRate * 100).toFixed(0)}%.`,
+        `Relief abates by one point per 750,000 € above 26m €, leaving ${dec(applied * 100, 0)}% of the standard ${dec(baseRate * 100, 0)}%.`,
       )
     }
   }
@@ -277,11 +278,11 @@ export function liquidityAtEvent(
   if (shortfall === 0) {
     verdict = 'The bill is met from liquid assets and the Continuity Reserve. No shares move.'
   } else if (breachesBlocking) {
-    verdict = `Meeting the bill requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares, which takes Stefan Quandt below the blocking quarter. A death in the family ends the veto that decades of market volatility never touched.`
+    verdict = `Meeting the bill requires selling ${dec(sharesToSell / 1e6, 2)}m shares, which takes Stefan Quandt below the blocking quarter. A death in the family ends the veto that decades of market volatility never touched.`
   } else if (breachesFloor) {
-    verdict = `Meeting the bill requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares and breaches the Art.3 pool floor. Abandoning the floor needs 75% by share.`
+    verdict = `Meeting the bill requires selling ${dec(sharesToSell / 1e6, 2)}m shares and breaches the Art.3 pool floor. Abandoning the floor needs 75% by share.`
   } else {
-    verdict = `A shortfall of ${(shortfall / 1e9).toFixed(2)}bn € requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares. Both thresholds hold, but the sale must clear an approved trading window under E4.1 and 75% by share under Appendix D.`
+    verdict = `A shortfall of ${dec(shortfall / 1e9, 2)}bn € requires selling ${dec(sharesToSell / 1e6, 2)}m shares. Both thresholds hold, but the sale must clear an approved trading window under E4.1 and 75% by share under Appendix D.`
   }
 
   return {

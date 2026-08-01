@@ -21,7 +21,7 @@ export const TOOLS: Tool[] = [
     vendor: 'Anthropic',
     role: 'Design direction, TypeScript implementation of the calculation engines, React interface, and drafting of this evidence pack.',
     verification:
-      'Every governance parameter was checked line by line against the Assignment 1 constitution. Every share count was reconciled arithmetically: 155.5m + 126.2m = 281.7m reproduces 25.83% / 20.9% at the February 2018 denominator and 27.7% / 22.4% at June 2025, which is the test that the model matches the paper rather than the prompt.',
+      'Every governance parameter was checked line by line against the Assignment 1 constitution. Every share count was reconciled arithmetically: 155,5m + 126,2m = 281,7m reproduces 25,83% / 20,9% at the February 2018 denominator and 27,7% / 22,4% at June 2025, which is the test that the model matches the paper rather than the prompt.',
   },
   {
     name: 'Vite + React + TypeScript',
@@ -116,7 +116,7 @@ export const PROMPT_LOG: PromptEntry[] = [
     produced:
       'Initially, a result that was impossible: the constrained frontier appeared to beat the unconstrained one. Because the constrained feasible set is a strict subset, that could not be true, and the contradiction exposed two separate defects.',
     iteration:
-      'The first defect was comparison by nearest sampled point, which matched portfolios at different volatilities; it was replaced with interpolation at an identical volatility. The second was the optimiser itself — an active-set method that clamped variables to their bounds but never released them, truncating the unconstrained frontier at 8.36 per cent when the true maximum is 8.85 per cent. It was replaced with projected gradient ascent, which cannot stall at a vertex, and verified by checking dominance at forty-one points along the shared range. The corrected result reframed the finding: the floor costs about five basis points at the family\'s current risk level, while the excess holding above the floor costs 139, and the floor\'s real effect is to raise the minimum reachable volatility from 4.3 to 11.2 per cent. The original framing — that continuity is expensive — was wrong, and only the arithmetic showed it.',
+      'The first defect was comparison by nearest sampled point, which matched portfolios at different volatilities; it was replaced with interpolation at an identical volatility. The second was the optimiser itself — an active-set method that clamped variables to their bounds but never released them, truncating the unconstrained frontier at 8,36 per cent when the true maximum is 8,85 per cent. It was replaced with projected gradient ascent, which cannot stall at a vertex, and verified by checking dominance at forty-one points along the shared range. The corrected result reframed the finding: the floor costs about five basis points at the family\'s current risk level, while the excess holding above the floor costs 139, and the floor\'s real effect is to raise the minimum reachable volatility from 4,3 to 11,2 per cent. The original framing — that continuity is expensive — was wrong, and only the arithmetic showed it.',
   },
   {
     n: 7,
@@ -125,7 +125,7 @@ export const PROMPT_LOG: PromptEntry[] = [
       'Test the 27% pool floor and the 25% blocking minority separately and report which binds first.',
     why: 'The constitution instructs the Owners\' Council to test the pool floor quarterly. Encoding it revealed the instruction may be misdirected, which is exactly the kind of error a tool can find and a document cannot.',
     produced:
-      'The floor sits roughly sixty-nine times further from being breached than the blocking quarter does. A quarterly floor test would have reported no action required throughout the June 2026 conversion, while the veto the family relies on lost about 2.4 percentage points.',
+      'The floor sits roughly sixty-nine times further from being breached than the blocking quarter does. A quarterly floor test would have reported no action required throughout the June 2026 conversion, while the veto the family relies on lost about 2,4 percentage points.',
     iteration:
       'This finding was promoted from a footnote to the headline advisory on the Bridge, and drove the decision to make the Sperrminorität gauge the platform\'s signature instrument rather than the pooled-control dial.',
   },

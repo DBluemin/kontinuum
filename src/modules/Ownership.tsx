@@ -13,6 +13,7 @@ import {
 } from '../engines/control'
 import { MARKET } from '../data/assumptions'
 import {
+  dec,
   ClauseTag,
   Etch,
   Finding,
@@ -165,7 +166,7 @@ function DilutionCurve({ current }: { current: number }) {
           fontFamily="var(--font-mono)"
           fill="var(--color-ink-mute)"
         >
-          {(p * 100).toFixed(0)}%
+          {dec(p * 100, 0)}%
         </text>
       ))}
     </svg>
@@ -297,20 +298,23 @@ export function OwnershipModule() {
             />
             <Row
               label="Distance between them"
-              value={`${base.bindingMultiple.toFixed(0)}×`}
+              value={`${dec(base.bindingMultiple, 0)}×`}
               sub="The floor is not the binding constraint and never has been"
             />
             <div className="p-4">
               <Finding tone="var(--color-m-red)" label="The constitution monitors the wrong number">
                 Article 3 asks the Owners' Council to test a 27% pool floor quarterly. Encoding both
-                thresholds shows the floor sits {base.bindingMultiple.toFixed(0)}× further away than
+                thresholds shows the floor sits {dec(base.bindingMultiple, 0)}× further away than
                 Stefan Quandt's individual blocking quarter. A quarterly test against the floor would
                 have reported "no action required" through the entire June 2026 conversion, while the
                 veto the family actually relies on lost{' '}
-                {Math.abs(
-                  computeControl(CONTROL_HISTORY[1].sharesInIssue).stefanPct * 100 -
-                    base.stefanPct * 100,
-                ).toFixed(2)}{' '}
+                {dec(
+                  Math.abs(
+                    computeControl(CONTROL_HISTORY[1].sharesInIssue).stefanPct * 100 -
+                      base.stefanPct * 100,
+                  ),
+                  2,
+                )}{' '}
                 percentage points. The platform tests both.
               </Finding>
             </div>

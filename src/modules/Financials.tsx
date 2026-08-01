@@ -15,7 +15,7 @@ import {
   MARKET,
 } from '../data/assumptions'
 import { LIABILITIES } from '../data/holdings'
-import { ClauseTag, Etch, Finding, Panel, Provenance, Row, fmtEur, fmtPct } from '../components/primitives'
+import { dec, ClauseTag, Etch, Finding, Panel, Provenance, Row, fmtEur, fmtPct } from '../components/primitives'
 import { MiniBar } from '../components/Gauges'
 
 function DividendHistory({ base }: { base: number }) {
@@ -39,7 +39,7 @@ function DividendHistory({ base }: { base: number }) {
         strokeDasharray="4 3"
       />
       <text x={w - pad.r} y={y(base) - 4} textAnchor="end" fontSize={9} fontFamily="var(--font-mono)" fill="var(--color-bone)">
-        {base.toFixed(2)} € base (E5.1)
+        {dec(base, 2)} € base (E5.1)
       </text>
       {DIVIDEND_HISTORY.map((d, i) => (
         <g key={d.year}>
@@ -212,7 +212,7 @@ export function FinancialsModule() {
 
         <Panel title="Income and total cost of ownership">
           <div>
-            <Row label="BMW dividend receipts" value={fmtEur(inc.bmwDividend)} sub={`${dps.toFixed(2)} € per share`} />
+            <Row label="BMW dividend receipts" value={fmtEur(inc.bmwDividend)} sub={`${dec(dps, 2)} € per share`} />
             <Row label="Operating company earnings" value={fmtEur(inc.operatingCompanyEarnings)} />
             <Row label="Portfolio income" value={fmtEur(inc.portfolioIncome)} />
             <Row label="Gross income" value={fmtEur(inc.grossIncome)} emphasis />
@@ -223,7 +223,7 @@ export function FinancialsModule() {
             <Row label="Net after tax and cost" value={fmtEur(inc.netAfterTax)} emphasis />
             <Row
               label="Total drag"
-              value={`${inc.dragBp.toFixed(0)} bp`}
+              value={`${dec(inc.dragBp, 0)} bp`}
               sub={`${fmtPct(inc.tcoRatio, 1)} of gross income`}
               tone="var(--color-amber)"
             />
@@ -249,7 +249,7 @@ export function FinancialsModule() {
                 className="w-24 accent-[#0066b1]"
               />
               <span className="readout text-[12px]" style={{ color: 'var(--color-ink)' }}>
-                {dps.toFixed(2)} €
+                {dec(dps, 2)} €
               </span>
             </div>
           }
@@ -349,7 +349,7 @@ export function FinancialsModule() {
                       {r.v ? fmtPct(r.v, 1) : '—'}
                     </td>
                     <td className="readout border-b border-rule px-3 py-2" style={{ color: 'var(--color-ink-dim)' }}>
-                      {r.v ? sharpe(r.n, r.v).toFixed(2) : '—'}
+                      {r.v ? dec(sharpe(r.n, r.v), 2) : '—'}
                     </td>
                   </tr>
                 )

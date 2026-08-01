@@ -1,6 +1,7 @@
 import { Dial } from '../components/Dial'
 import { LinearGauge } from '../components/Gauges'
 import {
+  dec,
   ClauseTag,
   Finding,
   Panel,
@@ -63,13 +64,13 @@ export function advisories(): Advisory[] {
 
   out.push({
     level: 'alarm',
-    text: `Blocking quarter holds on ${fmtShares(c.issuanceHeadroomShares)} shares of issuance headroom — ${fmtPct(c.issuanceHeadroomShares / c.sharesInIssue, 2)} of capital. The Art.3 pool floor is ${c.bindingMultiple.toFixed(0)}× further away and is not the binding constraint.`,
+    text: `Blocking quarter holds on ${fmtShares(c.issuanceHeadroomShares)} shares of issuance headroom — ${fmtPct(c.issuanceHeadroomShares / c.sharesInIssue, 2)} of capital. The Art.3 pool floor is ${dec(c.bindingMultiple, 0)}× further away and is not the binding constraint.`,
     clause: 'App.B',
   })
 
   out.push({
     level: 'advisory',
-    text: `Control drifting at ${CURRENT_DRIFT.toFixed(0)} bp per quarter since the June 2026 conversion. No shares were traded in the period.`,
+    text: `Control drifting at ${dec(CURRENT_DRIFT, 0)} bp per quarter since the June 2026 conversion. No shares were traded in the period.`,
     clause: 'Art.3',
   })
 
@@ -91,7 +92,7 @@ export function advisories(): Advisory[] {
 
   out.push({
     level: reserveYears < 2 ? 'advisory' : 'advisory',
-    text: `Continuity Reserve covers ${reserveYears.toFixed(2)} years of base distribution. A repeat of 2020 (1.90 € per share) draws it down by roughly ${fmtEur(POOLED_SHARES * (DISTRIBUTION.basePerShare.value - 1.9))} in one year.`,
+    text: `Continuity Reserve covers ${dec(reserveYears, 2)} years of base distribution. A repeat of 2020 (1.90 € per share) draws it down by roughly ${fmtEur(POOLED_SHARES * (DISTRIBUTION.basePerShare.value - 1.9))} in one year.`,
     clause: 'E5',
   })
 
@@ -133,7 +134,7 @@ export function Bridge() {
               max={150}
               label="Control drift"
               sublabel="basis points per quarter, no shares traded"
-              format={(v) => `${v > 0 ? '+' : ''}${v.toFixed(0)}`}
+              format={(v) => `${v > 0 ? '+' : ''}${dec(v, 0)}`}
               redline={{ from: -150, to: -75 }}
               advisory={{ from: -75, to: -25 }}
               markers={[{ value: 0, label: 'nil', tone: 'var(--color-bone)' }]}
@@ -152,7 +153,7 @@ export function Bridge() {
               max={60}
               label="Pooled control"
               sublabel={`per cent of voting capital · ${fmtNum(c.pooledShares)} of ${fmtNum(c.sharesInIssue)} shares`}
-              format={(v) => `${v.toFixed(2)}%`}
+              format={(v) => `${dec(v, 2)}%`}
               redline={{ from: 10, to: POOL_FLOOR * 100 }}
               advisory={{ from: POOL_FLOOR * 100, to: POOL_FLOOR * 100 + 3 }}
               markers={[
@@ -174,7 +175,7 @@ export function Bridge() {
               max={6}
               label="Reserve coverage"
               sublabel={`years of base distribution · ${fmtEur(DISTRIBUTION.reserveOpening.value)} held`}
-              format={(v) => `${v.toFixed(2)}`}
+              format={(v) => `${dec(v, 2)}`}
               redline={{ from: 0, to: 1 }}
               advisory={{ from: 1, to: 2 }}
               size={210}
@@ -195,7 +196,7 @@ export function Bridge() {
             advisoryWidth={1}
             label="Sperrminorität — Stefan Quandt"
             clause="App.B"
-            format={(v) => `${v.toFixed(v % 1 === 0 ? 0 : 2)}%`}
+            format={(v) => `${dec(v, v % 1 === 0 ? 0 : 2)}%`}
             tickStep={2}
             breached={c.blockingBreached}
             headroom={
@@ -352,7 +353,7 @@ export function Bridge() {
           <div className="space-y-5 px-4 py-5">
             <Finding tone="var(--color-m-red)" label="The floor is the wrong alarm">
               The constitution asks the Owners' Council to test a 27% pool floor quarterly.
-              Encoding both thresholds shows the floor is {c.bindingMultiple.toFixed(0)}× further
+              Encoding both thresholds shows the floor is {dec(c.bindingMultiple, 0)}× further
               away than Stefan Quandt's individual blocking quarter. The document monitors the
               constraint that is not binding.
             </Finding>

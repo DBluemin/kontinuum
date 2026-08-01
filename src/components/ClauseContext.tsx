@@ -123,7 +123,7 @@ function ClauseDrawer() {
                       className="readout text-right text-[13px] font-medium"
                       style={{ color: 'var(--color-bone-ink)' }}
                     >
-                      {typeof p.value === 'number' ? p.value.toLocaleString('en-GB') : p.value}
+                      {typeof p.value === 'number' ? p.value.toLocaleString('de-DE') : p.value}
                       {p.unit ? (
                         <span style={{ color: 'var(--color-bone-dim)' }}> {p.unit}</span>
                       ) : null}

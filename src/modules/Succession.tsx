@@ -13,6 +13,7 @@ import { G5, MEMBERS, age } from '../data/family'
 import { POOLED_SHARES, STEFAN_SHARES } from '../engines/control'
 import { DISTRIBUTION } from '../data/assumptions'
 import {
+  dec,
   ClauseTag,
   Etch,
   Finding,
@@ -287,7 +288,7 @@ export function SuccessionModule() {
             {fmtPct(Math.abs(de.effectiveRate - uk.effectiveRate), 1)} of the transferred value. The
             two systems fail in different places: England caps business relief at £1m and then
             charges 40% on half of everything above it, while Germany abates business relief to
-            nothing above roughly {(DE_TAX.abatementCeiling / 1e6).toFixed(0)}m € per acquirer and
+            nothing above roughly {dec(DE_TAX.abatementCeiling / 1e6, 0)}m € per acquirer and
             leaves only the §13a(9) Vorwegabschlag doing real work — a relief the family earns by
             imposing the very pooling restrictions that Article 3 needs anyway.
           </Finding>

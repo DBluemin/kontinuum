@@ -18,7 +18,7 @@ import {
 } from '../engines/portfolio'
 import { consolidate } from '../engines/consolidation'
 import { ASSET_CLASSES, BENCHMARKS, CORRELATION, MARKET, VALUES_SCREEN } from '../data/assumptions'
-import { ClauseTag, Etch, Finding, Panel, Row, fmtEur, fmtPct } from '../components/primitives'
+import { dec, ClauseTag, Etch, Finding, Panel, Row, fmtEur, fmtPct } from '../components/primitives'
 import { MiniBar } from '../components/Gauges'
 
 /** Realistic construction limits, applied to both frontiers so the comparison
@@ -100,7 +100,7 @@ function FrontierChart({
             fill="var(--color-m-red)"
             dominantBaseline="middle"
           >
-            {gapBp.toFixed(0)} bp — the floor
+            {dec(gapBp, 0)} bp — the floor
           </text>
         </>
       )}
@@ -155,7 +155,7 @@ function FrontierChart({
           fontFamily="var(--font-mono)"
           fill="var(--color-ink-mute)"
         >
-          {(v * 100).toFixed(0)}%
+          {dec(v * 100, 0)}%
         </text>
       ))}
       {[0.04, 0.06, 0.08, 0.1].map((v) => (
@@ -168,7 +168,7 @@ function FrontierChart({
           fontFamily="var(--font-mono)"
           fill="var(--color-ink-mute)"
         >
-          {(v * 100).toFixed(0)}%
+          {dec(v * 100, 0)}%
         </text>
       ))}
       <text x={w / 2} y={h - 1} textAnchor="middle" fontSize={9} className="etch" fill="var(--color-ink-mute)">
@@ -208,13 +208,13 @@ function CorrelationGrid() {
                           ? 'var(--color-rule)'
                           : `color-mix(in srgb, var(--color-m-blue) ${Math.abs(v) * 78}%, var(--color-dial))`,
                     }}
-                    title={`${ASSET_CLASSES[i].short} / ${ASSET_CLASSES[j].short}: ${v.toFixed(2)}`}
+                    title={`${ASSET_CLASSES[i].short} / ${ASSET_CLASSES[j].short}: ${dec(v, 2)}`}
                   >
                     <span
                       className="readout text-[10px]"
                       style={{ color: Math.abs(v) > 0.5 ? '#fff' : 'var(--color-ink-mute)' }}
                     >
-                      {v.toFixed(2)}
+                      {dec(v, 2)}
                     </span>
                   </div>
                 </td>
@@ -349,13 +349,13 @@ export function PortfolioModule() {
                   <div className="flex justify-between gap-3">
                     <span className="etch">Worst return gap, at {fmtPct(poc.maxCostAtVol, 1)} vol</span>
                     <span className="readout text-[12.5px]" style={{ color: 'var(--color-m-red)' }}>
-                      {poc.maxCostBp.toFixed(0)} bp
+                      {dec(poc.maxCostBp, 0)} bp
                     </span>
                   </div>
                   <div className="flex justify-between gap-3">
                     <span className="etch">Return gap at today's risk</span>
                     <span className="readout text-[12.5px]" style={{ color: 'var(--color-amber)' }}>
-                      {poc.costBp.toFixed(0)} bp
+                      {dec(poc.costBp, 0)} bp
                     </span>
                   </div>
                 </div>
@@ -364,7 +364,7 @@ export function PortfolioModule() {
                   <Etch>Available without touching the floor</Etch>
                   <div className="mt-1 flex items-baseline gap-2">
                     <span className="readout text-[30px] leading-none" style={{ color: 'var(--color-m-blue)' }}>
-                      +{poc.inefficiencyBp.toFixed(0)}
+                      +{dec(poc.inefficiencyBp, 0)}
                     </span>
                     <span className="etch">basis points per year</span>
                   </div>
@@ -381,11 +381,11 @@ export function PortfolioModule() {
                   At today's {fmtPct(currentVol, 1)} volatility a fully compliant portfolio, one
                   that never sells a share below the floor, returns{' '}
                   {fmtPct(poc.compliantErAtCurrentVol, 2)} against the {fmtPct(currentEr, 2)} the
-                  family actually holds. That is {poc.inefficiencyBp.toFixed(0)} basis points
+                  family actually holds. That is {dec(poc.inefficiencyBp, 0)} basis points
                   available at no constitutional cost whatever, because the family holds{' '}
                   {fmtPct(cons.bmwConcentration - poc.floorWeight, 1)} more BMW than Article 3
-                  requires. The floor itself costs {poc.costBp.toFixed(0)} bp at this risk level.
-                  The excess above it costs {poc.inefficiencyBp.toFixed(0)}. Most of what looks like
+                  requires. The floor itself costs {dec(poc.costBp, 0)} bp at this risk level.
+                  The excess above it costs {dec(poc.inefficiencyBp, 0)}. Most of what looks like
                   the price of continuity is the price of having left the position alone.
                 </Finding>
               )}
@@ -407,7 +407,7 @@ export function PortfolioModule() {
             <Row label="Volatility" value={fmtPct(currentVol, 1)} />
             <Row
               label="Sharpe ratio"
-              value={currentSharpe.toFixed(2)}
+              value={dec(currentSharpe, 2)}
               sub={`Risk-free ${fmtPct(MARKET.riskFreeRate.value, 1)}`}
               emphasis
             />
@@ -428,8 +428,8 @@ export function PortfolioModule() {
             />
             <Row
               label="Effective number of bets"
-              value={conc.effectiveBets.toFixed(2)}
-              sub={`Herfindahl ${conc.hhi.toFixed(3)} across ${ASSET_CLASSES.length} classes`}
+              value={dec(conc.effectiveBets, 2)}
+              sub={`Herfindahl ${dec(conc.hhi, 3)} across ${ASSET_CLASSES.length} classes`}
             />
           </div>
         </Panel>
@@ -504,7 +504,7 @@ export function PortfolioModule() {
               <div className="flex justify-between gap-3">
                 <span className="etch">Return impact</span>
                 <span className="readout text-[12px]" style={{ color: 'var(--color-amber)' }}>
-                  {screenOn ? `−${screenCostBp.toFixed(0)} bp` : `−${VALUES_SCREEN.dragBp} bp if applied`}
+                  {screenOn ? `−${dec(screenCostBp, 0)} bp` : `−${VALUES_SCREEN.dragBp} bp if applied`}
                 </span>
               </div>
               <div className="flex justify-between gap-3">

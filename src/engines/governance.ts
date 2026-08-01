@@ -9,6 +9,7 @@
  */
 
 import type { DecisionRight, ThresholdKind } from '../data/constitution'
+import { dec } from '../lib/format'
 
 export interface Voter {
   id: string
@@ -161,7 +162,7 @@ export function resolve(
   }
 
   const carries = shareTest && headTest
-  const pct = (x: number) => `${(x * 100).toFixed(1)}%`
+  const pct = (x: number) => `${dec(x * 100, 1)}%`
 
   let reason: string
   if (decision.threshold === 'dual') {

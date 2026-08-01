@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ClauseTag } from './primitives'
+import { dec } from '../lib/format'
 
 /**
  * An instrument, not a stat tile.
@@ -188,7 +189,9 @@ export function Dial({
                 fontSize={7.5}
                 fontFamily="var(--font-mono)"
               >
-                {Math.abs(t.v) >= 1000 ? `${Math.round(t.v / 1000)}k` : Math.round(t.v * 10) / 10}
+                {Math.abs(t.v) >= 1000
+                  ? `${dec(Math.round(t.v / 1000), 0)}k`
+                  : dec(Math.round(t.v * 10) / 10, Number.isInteger(t.v) ? 0 : 1)}
               </text>
             )
           })}

@@ -12,7 +12,7 @@ Source: https://github.com/DBluemin/kontinuum
 
 ### The premise
 
-Most family-office software models wealth as a sum of holdings. That model breaks when the family's position is a controlling stake in a listed company. Appendix B of the underlying constitution records the Quandt line's holding in BMW AG moving from 46.8 per cent to 50.2 per cent and back to 45.7 per cent between 2018 and 2026, with no share ever changing hands. Buybacks retired the denominator; the June 2026 preferred-share conversion restored it. Article 3 draws the conclusion. Family control is a residual: whatever survives the company's own capital decisions. KONTINUUM is built on that.
+Most family-office software models wealth as a sum of holdings. That model breaks when the family's position is a controlling stake in a listed company. Appendix B of the underlying constitution records the Quandt line's holding in BMW AG moving from 46,8 per cent to 50,2 per cent and back to 45,7 per cent between 2018 and 2026, with no share ever changing hands. Buybacks retired the denominator; the June 2026 preferred-share conversion restored it. Article 3 draws the conclusion. Family control is a residual: whatever survives the company's own capital decisions. KONTINUUM is built on that.
 
 ### What the platform is
 
@@ -22,7 +22,7 @@ What distinguishes it is where the constitution sits. It is the configuration fi
 
 ### How it is used
 
-The Bridge is the daily view: an instrument binnacle reporting four vital signs. A central dial shows pooled control against the 27 per cent floor. A speedometer to its left reads the rate at which control is eroding, currently about 111 basis points per quarter. A gauge to its right reports how many years of base distribution the Continuity Reserve can fund. Beneath them runs the platform's signature instrument, a linear gauge showing Stefan Quandt's blocking minority against a hard wall at 25 per cent. Headroom is read out in shares. An Owners' Council can act on 1.55 million shares; 0.25 percentage points tends to get filed and forgotten.
+The Bridge is the daily view: an instrument binnacle reporting four vital signs. A central dial shows pooled control against the 27 per cent floor. A speedometer to its left reads the rate at which control is eroding, currently about 111 basis points per quarter. A gauge to its right reports how many years of base distribution the Continuity Reserve can fund. Beneath them runs the platform's signature instrument, a linear gauge showing Stefan Quandt's blocking minority against a hard wall at 25 per cent. Headroom is read out in shares. An Owners' Council can act on 1,55 million shares; 0,25 percentage points tends to get filed and forgotten.
 
 The Constitution module makes Appendix D executable. A member picks a decision from the matrix (sell pooled shares, change the distribution base, admit the fifth generation to equity), and the platform resolves the required threshold against the live cap table. It reports whether the decision carries, who can carry it alone, and who can defeat it alone. A toggle admits the fifth generation to equity and re-runs the arithmetic, so the Council sees the cousin-consortium transition coming before it signs.
 
@@ -32,11 +32,11 @@ Ownership contains a dilution laboratory that replays the 2018 to 2026 record as
 
 Three findings emerged from making the rules executable that the document itself does not contain.
 
-First, the constitution monitors the wrong threshold. Article 3 instructs the Owners’ Council to test the 27 per cent pool floor quarterly. Encoding both constraints shows the floor sits roughly sixty-nine times further from breach than Stefan Quandt’s individual blocking quarter. A quarterly floor test would have reported no action required throughout the June 2026 conversion, while the veto the family actually relies on lost 2.4 percentage points.
+First, the constitution monitors the wrong threshold. Article 3 instructs the Owners’ Council to test the 27 per cent pool floor quarterly. Encoding both constraints shows the floor sits roughly sixty-nine times further from breach than Stefan Quandt’s individual blocking quarter. A quarterly floor test would have reported no action required throughout the June 2026 conversion, while the veto the family actually relies on lost 2,4 percentage points.
 
 Second, the pool is asymmetric. At 55/45 one holder carries every simple-majority decision alone and the other can only refuse. Class discussion had framed the risk as a 50/50 paralysis; this is a different failure, and Article 10 is what contains it, since amendment must clear the pool by share and the Assembly by head.
 
-Third, and most usefully, the expensive constraint turns out to be something else. The floor implies a minimum BMW weight of about 38 per cent of consolidated wealth; the family holds around 65 per cent. Running the optimiser twice shows the floor costs roughly five basis points a year at the family’s current risk level, while the excess holding above the floor costs about 139. That is some 497 million € a year available without selling a single share the constitution protects. The floor does bite hard in one place. It sets a risk floor as well as an ownership one: the lowest volatility reachable while honouring it is 11.2 per cent, against 4.3 per cent if the stake could be sold freely.
+Third, and most usefully, the expensive constraint turns out to be something else. The floor implies a minimum BMW weight of about 38 per cent of consolidated wealth; the family holds around 65 per cent. Running the optimiser twice shows the floor costs roughly five basis points a year at the family’s current risk level, while the excess holding above the floor costs about 139. That is some 497 million € a year available without selling a single share the constitution protects. The floor does bite hard in one place. It sets a risk floor as well as an ownership one: the lowest volatility reachable while honouring it is 11,2 per cent, against 4,3 per cent if the stake could be sold freely.
 
 ### Benefits and intended outcomes
 
@@ -62,7 +62,7 @@ Built on Blümin, D. (2026) “Two Inheritances: A Family Constitution Playbook 
 
 **Role.** Design direction, TypeScript implementation of the calculation engines, React interface, and drafting of this evidence pack.
 
-**How the output was verified.** Every governance parameter was checked line by line against the Assignment 1 constitution. Every share count was reconciled arithmetically: 155.5m + 126.2m = 281.7m reproduces 25.83% / 20.9% at the February 2018 denominator and 27.7% / 22.4% at June 2025, which is the test that the model matches the paper rather than the prompt.
+**How the output was verified.** Every governance parameter was checked line by line against the Assignment 1 constitution. Every share count was reconciled arithmetically: 155,5m + 126,2m = 281,7m reproduces 25,83% / 20,9% at the February 2018 denominator and 27,7% / 22,4% at June 2025, which is the test that the model matches the paper rather than the prompt.
 
 ### Vite + React + TypeScript — Open source
 
@@ -146,7 +146,7 @@ Prompts are recorded in the order given, including the ones that produced poor o
 
 **What it produced.** Initially, a result that was impossible: the constrained frontier appeared to beat the unconstrained one. Because the constrained feasible set is a strict subset, that could not be true, and the contradiction exposed two separate defects.
 
-**How it was iterated.** The first defect was comparison by nearest sampled point, which matched portfolios at different volatilities; it was replaced with interpolation at an identical volatility. The second was the optimiser itself — an active-set method that clamped variables to their bounds but never released them, truncating the unconstrained frontier at 8.36 per cent when the true maximum is 8.85 per cent. It was replaced with projected gradient ascent, which cannot stall at a vertex, and verified by checking dominance at forty-one points along the shared range. The corrected result reframed the finding: the floor costs about five basis points at the family's current risk level, while the excess holding above the floor costs 139, and the floor's real effect is to raise the minimum reachable volatility from 4.3 to 11.2 per cent. The original framing — that continuity is expensive — was wrong, and only the arithmetic showed it.
+**How it was iterated.** The first defect was comparison by nearest sampled point, which matched portfolios at different volatilities; it was replaced with interpolation at an identical volatility. The second was the optimiser itself — an active-set method that clamped variables to their bounds but never released them, truncating the unconstrained frontier at 8,36 per cent when the true maximum is 8,85 per cent. It was replaced with projected gradient ascent, which cannot stall at a vertex, and verified by checking dominance at forty-one points along the shared range. The corrected result reframed the finding: the floor costs about five basis points at the family's current risk level, while the excess holding above the floor costs 139, and the floor's real effect is to raise the minimum reachable volatility from 4,3 to 11,2 per cent. The original framing — that continuity is expensive — was wrong, and only the arithmetic showed it.
 
 ### Prompt 07 — Author (correction)
 
@@ -154,7 +154,7 @@ Prompts are recorded in the order given, including the ones that produced poor o
 
 **Why this prompt was chosen.** The constitution instructs the Owners' Council to test the pool floor quarterly. Encoding it revealed the instruction may be misdirected, which is exactly the kind of error a tool can find and a document cannot.
 
-**What it produced.** The floor sits roughly sixty-nine times further from being breached than the blocking quarter does. A quarterly floor test would have reported no action required throughout the June 2026 conversion, while the veto the family relies on lost about 2.4 percentage points.
+**What it produced.** The floor sits roughly sixty-nine times further from being breached than the blocking quarter does. A quarterly floor test would have reported no action required throughout the June 2026 conversion, while the veto the family relies on lost about 2,4 percentage points.
 
 **How it was iterated.** This finding was promoted from a footnote to the headline advisory on the Bridge, and drove the decision to make the Sperrminorität gauge the platform's signature instrument rather than the pooled-control dial.
 
