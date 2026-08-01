@@ -140,6 +140,17 @@ export const PROMPT_LOG: PromptEntry[] = [
     iteration:
       'An earlier draft assigned estimated birth years to the undocumented heirs without flagging them. This was corrected: the gap is a governance finding the Owners\' Council should close, and hiding it would have been the more serious error.',
   },
+  {
+    n: 9,
+    author: 'Author (correction)',
+    prompt:
+      'Correct the course code in the Assignment 1 source document, then confirm the platform still matches it.',
+    why: 'A routine metadata fix, treated as an opportunity to re-verify the source, because every verbatim quotation in the platform had been read out of one local file that nobody had checked against the submitted version.',
+    produced:
+      'The check found that the .docx in the working folder was a stale draft. The exported PDF, one day newer, carried a punctuation pass, a different professor line, and, decisively, the euro symbol placed after the amount rather than before it. Every clause the platform quoted had been encoded from the older file.',
+    iteration:
+      'All twenty-three quoted segments were re-checked against the authoritative PDF by string comparison, normalising for list markers and the hyphenation artefacts pdftotext introduces at line breaks. Nine substantive corrections followed: the euro placement in Article 7, four semicolons the paper does not contain, a condensed values list in Article 2 that was a paraphrase rather than a quote, a spliced pair of non-adjacent sentences in Article 6, and three places where words had been dropped mid-quotation without an elision marker. Nineteen of the twenty-three segments now match the paper character for character; the remaining four end early at a full stop, which is ordinary quoting practice. A feature whose entire claim is exact quotation cannot rest on an unverified transcription, and the error would not have surfaced without comparing against the submitted artefact rather than the convenient one.',
+  },
 ]
 
 export const REPORT_TITLE = 'KONTINUUM: a constitution-driven family office platform'

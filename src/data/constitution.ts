@@ -55,7 +55,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Article 2',
     group: 'Purpose',
     title: 'Purpose, Vision and Values',
-    text: 'By 2050 a single voting bloc of Herbert Quandt\'s descendants should hold at least a quarter of BMW\'s voting capital, exercise oversight without executive power, and fund a memorial programme no member may quietly discontinue. Four values follow, each traceable to an event rather than an aspiration: patience across the cycle; restraint from executive power; memory as obligation; privacy as security, not concealment.',
+    text: 'By 2050 a single voting bloc of Herbert Quandt\'s descendants should hold at least a quarter of BMW\'s voting capital, exercise oversight without executive power, and fund a memorial programme no member may quietly discontinue. Four values follow, each traceable to an event rather than an aspiration. Patience across the cycle: Herbert did not sell in 1959, Johanna did not dilute during the Rover crisis. Restraint from executive power: no family member has sat on BMW\'s Board of Management since 1959, a rule and not an accident. Memory as obligation: the 2011 study came under public pressure, and Article 9 removes the pressure requirement. Privacy as security, not concealment: the 1978 kidnapping attempt on Johanna and Susanne, and the 2009 Sgarbi extortion conviction, make discretion protective.',
     params: [
       { key: 'targetYear', label: 'Horizon', value: 2050 },
       { key: 'minVotingCapital', label: 'Minimum voting capital', value: 25, unit: '%' },
@@ -108,7 +108,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Article 6',
     group: 'Distribution',
     title: 'Distribution and Reinvestment',
-    text: 'Family income varied more than fourfold in seven years on an unchanged shareholding, and the payout ratio driving it is set by a board the family does not control alone. The Owners\' Council therefore distributes a smoothed base per pooled share, with the surplus funding a Continuity Reserve that covers the base in weak years, buys shares when the pool nears the floor, and finances exits.',
+    text: 'Family income varied more than fourfold in seven years on an unchanged shareholding, and the siblings received roughly 2€ billion in 2024 (Surplus, 2025). […] For a fifth generation of four or more owners it will not be, and the payout ratio driving it is set by a board the family does not control alone. The Owners\' Council therefore distributes a smoothed base per pooled share, with the surplus funding a Continuity Reserve that covers the base in weak years, buys shares when the pool nears the floor, and finances exits.',
     params: [
       { key: 'mechanism', label: 'Mechanism', value: 'Smoothed base + Continuity Reserve' },
       { key: 'volatility', label: 'Observed dividend range', value: '1.90 € to 8.50 €' },
@@ -120,7 +120,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Article 7',
     group: 'Succession',
     title: 'Continuity and the Fifth Generation',
-    text: 'Equity transfers in three tranches, at 25, 35 and 45, as gifts against the ErbStG Verschonungsabschlag. That carries a known risk: relief above €90 million already requires a needs test, a constitutional challenge is pending, and a proposal exists to replace business relief with a €5 million allowance, so the Owners\' Council reviews the schedule annually. […] This constitution therefore requires a named standing proxy for every pooled holding, exercisable on death or incapacity.',
+    text: 'Equity transfers in three tranches, at 25, 35 and 45, as gifts against the ErbStG Verschonungsabschlag. That carries a known risk: relief above 90€ million already requires a needs test, a constitutional challenge is pending, and a proposal exists to replace business relief with a 5€ million allowance, so the Owners\' Council reviews the schedule annually. […] This constitution therefore requires a named standing proxy for every pooled holding, exercisable on death or incapacity.',
     params: [
       { key: 'tranche1', label: 'Tranche 1', value: 25, unit: 'years' },
       { key: 'tranche2', label: 'Tranche 2', value: 35, unit: 'years' },
@@ -150,7 +150,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Article 9',
     group: 'Legacy',
     title: 'Philanthropy, Memory and Legacy Stewardship',
-    text: 'Half a per cent of pooled dividend income is committed in perpetuity to forced-labour documentation and education, disbursed by the Family Council and terminable only by unanimous vote. Every descendant attends a family-history seminar at sixteen covering the Scholtyseck findings and visits the documentation centre at Berlin-Schöneweide, financial-statement literacy follows at eighteen and mentorship by a non-family executive at twenty-one. Philanthropy is discretionary. Restitution is not.',
+    text: 'Half a per cent of pooled dividend income is committed in perpetuity to forced-labour documentation and education, disbursed by the Family Council and terminable only by unanimous vote. Every descendant attends a family-history seminar at sixteen covering the Scholtyseck findings and visits the documentation centre at Berlin-Schöneweide, on the former Pertrix site. Financial-statement literacy follows at eighteen and mentorship by a non-family executive at twenty-one, on the Haniel Academy model. Philanthropy is discretionary. Restitution is not.',
     params: [
       { key: 'memorialShare', label: 'Memorial commitment', value: 0.5, unit: '% of pooled dividend' },
       { key: 'termination', label: 'Terminable by', value: 'Unanimity only' },
@@ -165,7 +165,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Article 10',
     group: 'Amendment',
     title: 'Ratification, Review and Amendment',
-    text: 'Amendment requires seventy-five per cent of pooled shares and a simple majority of the Assembly by head; neither alone suffices. The document sunsets after thirty years, following Freudenberg\'s practice of renewing its partnership agreement for a defined term rather than presuming perpetuity.',
+    text: 'Amendment requires seventy-five per cent of pooled shares and a simple majority of the Assembly by head. Neither alone suffices. The document sunsets after thirty years, following Freudenberg\'s practice of renewing its partnership agreement for a defined term rather than presuming perpetuity.',
     params: [
       { key: 'amendShare', label: 'Amendment — by share', value: 75, unit: '%' },
       { key: 'amendHead', label: 'Amendment — by head', value: 50, unit: '%' },
@@ -206,7 +206,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Appendix E2',
     group: 'Valuation',
     title: 'Valuation and Buy-Sell',
-    text: 'A member may exit at any time on ninety days\' notice. The pool has a right of first refusal, exercisable within sixty days, at the volume-weighted average price of the BMW ordinary share over the preceding ninety trading days, less a 20 per cent discount reflecting illiquidity and the transfer restrictions. The purchase is funded from the Continuity Reserve; where the Reserve is insufficient, the pool may pay in three annual instalments with interest at the ECB main refinancing rate plus 200 basis points. Unlisted family assets are valued triennially by an independent firm on the IDW S1 standard.',
+    text: 'A member may exit at any time on ninety days\' notice. The pool has a right of first refusal, exercisable within sixty days, at the volume-weighted average price of the BMW ordinary share over the preceding ninety trading days, less a 20 per cent discount reflecting illiquidity and the transfer restrictions. The purchase is funded from the Continuity Reserve, where the Reserve is insufficient, the pool may pay in three annual instalments with interest at the ECB main refinancing rate plus 200 basis points. Unlisted family assets are valued triennially by an independent firm appointed by the Owners\' Council, on the IDW S1 standard.',
     params: [
       { key: 'noticeDays', label: 'Exit notice', value: 90, unit: 'days' },
       { key: 'rofrDays', label: 'Right of first refusal', value: 60, unit: 'days' },
@@ -223,7 +223,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Appendix E3',
     group: 'Employment',
     title: 'Family Employment',
-    text: 'No descendant may serve on the Board of Management of BMW AG. Eligibility for employment in a family holding company requires a completed degree, a minimum of five years of employment outside the family\'s companies, and documented profit-and-loss responsibility. Remuneration is benchmarked externally against comparable non-family roles. Neither a family discount nor a family premium is permitted.',
+    text: 'No descendant may serve on the Board of Management of BMW AG. Eligibility for employment in a family holding company requires a completed degree, a minimum of five years of employment outside the family\'s companies, and documented profit-and-loss responsibility. Applications are assessed by the relevant company\'s own process, not by the Family Council. Remuneration is benchmarked externally by the Family Council against comparable non-family roles. Neither a family discount nor a family premium is permitted.',
     params: [
       { key: 'degree', label: 'Degree', value: 'Required' },
       { key: 'outsideYears', label: 'Outside experience', value: 5, unit: 'years' },
@@ -251,7 +251,7 @@ export const CLAUSES: Clause[] = [
     ref: 'Appendix E5',
     group: 'Distribution',
     title: 'Distribution Policy',
-    text: 'The Owners\' Council sets a base distribution per pooled share, reset every three years by reference to German CPI. Dividend receipts above the base are transferred to the Continuity Reserve, held at holding-company level. The Reserve is applied, in order of priority, to: funding the base in years when BMW\'s dividend falls below it; purchasing ordinary shares when the pooled percentage approaches the 27 per cent floor; and funding buy-outs under E2. A distribution below the base requires 75 per cent of pooled shares. The Reserve may not be distributed to members.',
+    text: 'The Owners\' Council sets a base distribution per pooled share, reset every three years by reference to German CPI. Dividend receipts above the base are transferred to the Continuity Reserve, held at holding-company level. The Reserve is applied, in order of priority, to: funding the base in years when BMW\'s dividend falls below it, purchasing ordinary shares when the pooled percentage approaches the 27 per cent floor, and funding buy-outs under E2. A distribution below the base requires 75 per cent of pooled shares. The Reserve may not be distributed to members.',
     params: [
       { key: 'baseReset', label: 'Base reset', value: 3, unit: 'years, German CPI' },
       { key: 'waterfall1', label: 'Reserve priority 1', value: 'Fund base in weak years' },
