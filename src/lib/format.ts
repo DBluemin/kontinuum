@@ -16,6 +16,10 @@ export const dec = (v: number, dp = 2): string =>
 
 export const fmtEur = (v: number, dp = 2): string => {
   const abs = Math.abs(v)
+  // Above a thousand billion the German thousands point collides with the
+  // English magnitude suffix: "1.043bn" reads as 1.043 billion to anyone
+  // expecting a decimal point. Switch to trillions before that can happen.
+  if (abs >= 1e12) return `${dec(v / 1e12, dp)}tn €`
   if (abs >= 1e9) return `${dec(v / 1e9, dp)}bn €`
   if (abs >= 1e6) return `${dec(v / 1e6, dp === 2 ? 1 : dp)}m €`
   if (abs >= 1e3) return `${dec(v / 1e3, 0)}k €`
