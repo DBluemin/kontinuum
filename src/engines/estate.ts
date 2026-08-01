@@ -7,7 +7,7 @@
  * analysis: at this scale the two systems fail in completely different places.
  *
  * The finding the engine exists to surface: German business relief
- * (§13a ErbStG) abates to nothing above roughly €90m per acquirer, so at
+ * (§13a ErbStG) abates to nothing above roughly 90m € per acquirer, so at
  * Quandt scale the Verschonungsabschlag the constitution relies on in Art.7
  * does almost no work. What does work is the §13a(9) Vorwegabschlag — up to
  * 30% off the valuation, earned precisely by the pooling restrictions the
@@ -136,8 +136,8 @@ export function germanClassIRate(taxableBase: number): number {
 }
 
 /**
- * §13c Abschmelzmodell: above €26m per acquirer the exemption percentage
- * falls by one point for every €750,000 of excess, reaching zero at about €90m.
+ * §13c Abschmelzmodell: above 26m € per acquirer the exemption percentage
+ * falls by one point for every 750,000 € of excess, reaching zero at about 90m €.
  */
 export function abatedExemption(perAcquirer: number, baseRate: number): number {
   if (perAcquirer <= DE_TAX.abatementFloor) return baseRate
@@ -180,11 +180,11 @@ export function computeDE(input: TransferInput): TaxResult {
 
     if (applied === 0) {
       notes.push(
-        `Business relief abates to zero above roughly €90m per acquirer. At €${(perAcquirer / 1e6).toFixed(0)}m each, the Verschonungsabschlag that Art.7 plans around is worth nothing. Only the Verschonungsbedarfsprüfung — a needs test applying 50% of the acquirer's other private assets to the bill — remains, and it is discretionary relief, not an entitlement.`,
+        `Business relief abates to zero above roughly 90m € per acquirer. At ${(perAcquirer / 1e6).toFixed(0)}m € each, the Verschonungsabschlag that Art.7 plans around is worth nothing. Only the Verschonungsbedarfsprüfung — a needs test applying 50% of the acquirer's other private assets to the bill — remains, and it is discretionary relief, not an entitlement.`,
       )
     } else if (applied < baseRate) {
       notes.push(
-        `Relief abates by one point per €750,000 above €26m, leaving ${(applied * 100).toFixed(0)}% of the standard ${(baseRate * 100).toFixed(0)}%.`,
+        `Relief abates by one point per 750,000 € above 26m €, leaving ${(applied * 100).toFixed(0)}% of the standard ${(baseRate * 100).toFixed(0)}%.`,
       )
     }
   }
@@ -281,7 +281,7 @@ export function liquidityAtEvent(
   } else if (breachesFloor) {
     verdict = `Meeting the bill requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares and breaches the Art.3 pool floor. Abandoning the floor needs 75% by share.`
   } else {
-    verdict = `A shortfall of €${(shortfall / 1e9).toFixed(2)}bn requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares. Both thresholds hold, but the sale must clear an approved trading window under E4.1 and 75% by share under Appendix D.`
+    verdict = `A shortfall of ${(shortfall / 1e9).toFixed(2)}bn € requires selling ${(sharesToSell / 1e6).toFixed(2)}m shares. Both thresholds hold, but the sale must clear an approved trading window under E4.1 and 75% by share under Appendix D.`
   }
 
   return {

@@ -111,7 +111,7 @@ export const CLAUSES: Clause[] = [
     text: 'Family income varied more than fourfold in seven years on an unchanged shareholding, and the payout ratio driving it is set by a board the family does not control alone. The Owners\' Council therefore distributes a smoothed base per pooled share, with the surplus funding a Continuity Reserve that covers the base in weak years, buys shares when the pool nears the floor, and finances exits.',
     params: [
       { key: 'mechanism', label: 'Mechanism', value: 'Smoothed base + Continuity Reserve' },
-      { key: 'volatility', label: 'Observed dividend range', value: '€1.90 – €8.50' },
+      { key: 'volatility', label: 'Observed dividend range', value: '1.90 € to 8.50 €' },
     ],
     drives: ['financials', 'bridge'],
   },

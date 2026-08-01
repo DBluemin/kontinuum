@@ -299,7 +299,7 @@ export const STRESSES: Stress[] = [
   {
     id: 'dividend-cut',
     label: 'Dividend cut to 2020 levels',
-    description: 'Dividend falls to €1.90, as it did in 2020. The base is funded from the Reserve.',
+    description: 'Dividend falls to 1.90 €, as it did in 2020. The base is funded from the Reserve.',
     sharePriceShock: -0.18,
     dividendShock: -0.57,
     issuanceShock: 0,

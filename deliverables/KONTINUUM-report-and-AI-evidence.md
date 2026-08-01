@@ -8,7 +8,7 @@ Source: https://github.com/DBluemin/kontinuum
 
 ---
 
-## Showcase report (1020 words)
+## Showcase report (1021 words)
 
 ### The premise
 
@@ -36,7 +36,7 @@ First, the constitution monitors the wrong threshold. Article 3 instructs the Ow
 
 Second, the pool is asymmetric. At 55/45 one holder carries every simple-majority decision alone and the other can only refuse. Class discussion had framed the risk as a 50/50 paralysis; this is a different failure, and Article 10 is what contains it, since amendment must clear the pool by share and the Assembly by head.
 
-Third, and most usefully, the expensive constraint turns out to be something else. The floor implies a minimum BMW weight of about 38 per cent of consolidated wealth; the family holds around 65 per cent. Running the optimiser twice shows the floor costs roughly five basis points a year at the family’s current risk level, while the excess holding above the floor costs about 139. That is some €497 million a year available without selling a single share the constitution protects. The floor does bite hard in one place. It sets a risk floor as well as an ownership one: the lowest volatility reachable while honouring it is 11.2 per cent, against 4.3 per cent if the stake could be sold freely.
+Third, and most usefully, the expensive constraint turns out to be something else. The floor implies a minimum BMW weight of about 38 per cent of consolidated wealth; the family holds around 65 per cent. Running the optimiser twice shows the floor costs roughly five basis points a year at the family’s current risk level, while the excess holding above the floor costs about 139. That is some 497 million € a year available without selling a single share the constitution protects. The floor does bite hard in one place. It sets a risk floor as well as an ownership one: the lowest volatility reachable while honouring it is 11.2 per cent, against 4.3 per cent if the stake could be sold freely.
 
 ### Benefits and intended outcomes
 

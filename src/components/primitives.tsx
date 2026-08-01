@@ -3,12 +3,14 @@ import { useClause } from './ClauseContext'
 
 /* ── Formatting ─────────────────────────────────────────────────────── */
 
+/** Continental convention: the symbol trails the amount, joined by a
+    non-breaking space so it never wraps away from its figure. */
 export const fmtEur = (v: number, dp = 2): string => {
   const abs = Math.abs(v)
-  if (abs >= 1e9) return `€${(v / 1e9).toFixed(dp)}bn`
-  if (abs >= 1e6) return `€${(v / 1e6).toFixed(dp === 2 ? 1 : dp)}m`
-  if (abs >= 1e3) return `€${(v / 1e3).toFixed(0)}k`
-  return `€${v.toFixed(0)}`
+  if (abs >= 1e9) return `${(v / 1e9).toFixed(dp)}bn €`
+  if (abs >= 1e6) return `${(v / 1e6).toFixed(dp === 2 ? 1 : dp)}m €`
+  if (abs >= 1e3) return `${(v / 1e3).toFixed(0)}k €`
+  return `${v.toFixed(0)} €`
 }
 
 export const fmtPct = (v: number, dp = 1): string => `${(v * 100).toFixed(dp)}%`

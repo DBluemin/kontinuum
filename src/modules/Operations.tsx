@@ -39,7 +39,7 @@ const DECISION_LOG: LogEntry[] = [
   { date: '2026-07-02', decision: 'Emergency floor test following the preferred-share conversion', outcome: 'noted', threshold: 'Quarterly test', clause: 'Art.3' },
   { date: '2026-06-18', decision: 'AGM instruction: approve conversion of preferred shares', outcome: 'carried', threshold: 'Simple majority by share', clause: 'Art.4' },
   { date: '2026-05-05', decision: 'Trading window opened for the period to 30 June', outcome: 'carried', threshold: "Owners' Council", clause: 'E4' },
-  { date: '2026-03-11', decision: 'Distribution base held at €4.00 per pooled share', outcome: 'carried', threshold: '75% by share', clause: 'E5' },
+  { date: '2026-03-11', decision: 'Distribution base held at 4.00 € per pooled share', outcome: 'carried', threshold: '75% by share', clause: 'E5' },
   { date: '2026-02-20', decision: 'Standing proxy nomination for the Stefan branch deferred', outcome: 'noted', threshold: "Owners' Council", clause: 'Art.7' },
 ]
 

@@ -39,7 +39,7 @@ function DividendHistory({ base }: { base: number }) {
         strokeDasharray="4 3"
       />
       <text x={w - pad.r} y={y(base) - 4} textAnchor="end" fontSize={9} fontFamily="var(--font-mono)" fill="var(--color-bone)">
-        €{base.toFixed(2)} base (E5.1)
+        {base.toFixed(2)} € base (E5.1)
       </text>
       {DIVIDEND_HISTORY.map((d, i) => (
         <g key={d.year}>
@@ -212,7 +212,7 @@ export function FinancialsModule() {
 
         <Panel title="Income and total cost of ownership">
           <div>
-            <Row label="BMW dividend receipts" value={fmtEur(inc.bmwDividend)} sub={`€${dps.toFixed(2)} per share`} />
+            <Row label="BMW dividend receipts" value={fmtEur(inc.bmwDividend)} sub={`${dps.toFixed(2)} € per share`} />
             <Row label="Operating company earnings" value={fmtEur(inc.operatingCompanyEarnings)} />
             <Row label="Portfolio income" value={fmtEur(inc.portfolioIncome)} />
             <Row label="Gross income" value={fmtEur(inc.grossIncome)} emphasis />
@@ -249,7 +249,7 @@ export function FinancialsModule() {
                 className="w-24 accent-[#0066b1]"
               />
               <span className="readout text-[12px]" style={{ color: 'var(--color-ink)' }}>
-                €{dps.toFixed(2)}
+                {dps.toFixed(2)} €
               </span>
             </div>
           }
@@ -264,7 +264,7 @@ export function FinancialsModule() {
             </div>
             <div className="mt-4">
               <Finding label="Fourfold income variation on an unchanged holding">
-                The dividend ran from €1.90 to €8.50 in seven years while the family's shareholding
+                The dividend ran from 1.90 € to 8.50 € in seven years while the family's shareholding
                 did not move once. For two billionaires that is an inconvenience; for a fifth
                 generation of five or more owners drawing a living from it, it is the problem the
                 smoothed base and the Continuity Reserve exist to solve.

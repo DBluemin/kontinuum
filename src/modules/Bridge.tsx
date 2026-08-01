@@ -91,7 +91,7 @@ export function advisories(): Advisory[] {
 
   out.push({
     level: reserveYears < 2 ? 'advisory' : 'advisory',
-    text: `Continuity Reserve covers ${reserveYears.toFixed(2)} years of base distribution. A repeat of 2020 (€1.90 per share) draws it down by roughly ${fmtEur(POOLED_SHARES * (DISTRIBUTION.basePerShare.value - 1.9))} in one year.`,
+    text: `Continuity Reserve covers ${reserveYears.toFixed(2)} years of base distribution. A repeat of 2020 (1.90 € per share) draws it down by roughly ${fmtEur(POOLED_SHARES * (DISTRIBUTION.basePerShare.value - 1.9))} in one year.`,
     clause: 'E5',
   })
 
