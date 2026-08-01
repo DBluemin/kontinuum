@@ -2,7 +2,7 @@
  * The constitution, encoded.
  *
  * Source: Blümin, D. (2026) "Two Inheritances: A Family Constitution Playbook
- * for the Quandt Family and the Ownership of BMW AG", MGT-5603, Hult
+ * for the Quandt Family and the Ownership of BMW AG", ENT-0301, Hult
  * International Business School.
  *
  * Every clause below carries (a) its verbatim text, so the platform can quote

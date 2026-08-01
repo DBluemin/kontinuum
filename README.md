@@ -2,7 +2,7 @@
 
 A constitution-driven family office platform for the Quandt line and the ownership of BMW AG.
 
-Built for MGT-5603 (Hult International Business School) as the Assignment 2 deliverable. The
+Built for ENT-0301 (Hult International Business School) as the Assignment 2 deliverable. The
 anchor case is the author's own Assignment 1: *Two Inheritances — A Family Constitution Playbook
 for the Quandt Family and the Ownership of BMW AG*.
 

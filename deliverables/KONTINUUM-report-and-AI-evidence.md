@@ -1,6 +1,6 @@
 # KONTINUUM: a constitution-driven family office platform
 
-*Showcase report · MGT-5603 · anchor case: the Quandt line and the ownership of BMW AG*
+*Showcase report · ENT-0301 · anchor case: the Quandt line and the ownership of BMW AG*
 
 Platform: https://dbluemin.github.io/kontinuum/
 
@@ -52,7 +52,7 @@ Two of the five fifth-generation members are not publicly documented, so their t
 
 ---
 
-Built on Blümin, D. (2026) “Two Inheritances: A Family Constitution Playbook for the Quandt Family and the Ownership of BMW AG”, MGT-5603, Hult International Business School. Ownership arithmetic follows Appendix B of that paper, which derives from BMW Group (2026a, 2026b), Handelsblatt (2018), Börsen-Zeitung (2025) and t-online (2026). AI tools, the full prompt log and per-prompt justifications are recorded in the adjacent tabs.
+Built on Blümin, D. (2026) “Two Inheritances: A Family Constitution Playbook for the Quandt Family and the Ownership of BMW AG”, ENT-0301, Hult International Business School. Ownership arithmetic follows Appendix B of that paper, which derives from BMW Group (2026a, 2026b), Handelsblatt (2018), Börsen-Zeitung (2025) and t-online (2026). AI tools, the full prompt log and per-prompt justifications are recorded in the adjacent tabs.
 
 ---
 

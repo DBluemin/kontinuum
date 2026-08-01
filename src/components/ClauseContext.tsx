@@ -159,7 +159,7 @@ function ClauseDrawer() {
             style={{ color: 'var(--color-bone-dim)' }}
           >
             Blümin, D. (2026) <em>Two Inheritances: A Family Constitution Playbook for the
-            Quandt Family and the Ownership of BMW AG</em>. MGT-5603, Hult International
+            Quandt Family and the Ownership of BMW AG</em>. ENT-0301, Hult International
             Business School. Every parameter above is read directly by the platform — change
             the clause and the instruments move.
           </p>
